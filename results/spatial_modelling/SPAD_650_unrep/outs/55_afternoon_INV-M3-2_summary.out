@@ -1,0 +1,36 @@
+$call
+asreml(fixed = SPAD_650 ~ 1 + m_thick, random = ~Genotype + Device.ID, 
+    residual = ~ar1v(row):ar1(col), data = filledflDf[order(filledflDf$row, 
+        filledflDf$col), ], na.action = na.method(y = c("include", 
+        "include", "include"), x = c("include", "include", "include")))
+
+$loglik
+[1] -587.2914
+
+$nedf
+[1] 288
+
+$sigma
+[1] 1
+
+$varcomp
+                   component std.error   z.ratio bound   %ch
+Device.ID       1.094961e-06        NA        NA     B   0.0
+Genotype        1.985012e+01 1.7873978 11.105596     P   0.9
+row:col!R       1.000000e+00        NA        NA     F   0.0
+row:col!row!cor 8.539548e-01        NA        NA     B  52.0
+row:col!row!var 1.047756e+00 0.7211243  1.452947     P 110.2
+row:col!col!cor 9.800000e-01        NA        NA     F   0.0
+
+$bic
+[1] 1197.235
+attr(,"parameters")
+[1] 4
+
+$aic
+[1] 1182.583
+attr(,"parameters")
+[1] 4
+
+attr(,"class")
+[1] "summary.asreml"

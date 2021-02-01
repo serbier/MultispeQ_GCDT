@@ -1,0 +1,35 @@
+$call
+asreml(fixed = SPAD_650 ~ 1 + m_thick, random = ~f23g + Device.ID + 
+    row + col, data = filledflDf[order(filledflDf$row, filledflDf$col), 
+    ], na.action = na.method(y = c("include", "omit", "fail"), 
+    x = c("include", "include", "omit")))
+
+$loglik
+[1] -501.7911
+
+$nedf
+[1] 289
+
+$sigma
+[1] 3.18292
+
+$varcomp
+           component std.error   z.ratio bound %ch
+Device.ID  1.8226453 2.8253514 0.6451039     P 0.1
+col        0.1546230 0.2824419 0.5474507     P 1.0
+row        0.1657791 0.3783194 0.4381988     P 0.4
+f23g       0.9760900 1.1284712 0.8649666     P 0.4
+units!R   10.1309812 1.3988879 7.2421682     P 0.0
+
+$bic
+[1] 1031.914
+attr(,"parameters")
+[1] 5
+
+$aic
+[1] 1013.582
+attr(,"parameters")
+[1] 5
+
+attr(,"class")
+[1] "summary.asreml"
